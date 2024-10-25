@@ -9,17 +9,24 @@ typedef enum {
 } Tah;
 
 
-Tah getComputerChoice() {
+Tah getComputerChoice()
+{
     return rand() % 3 + 1;
 }
-int determineWinner(Tah player, Tah computer) {
-    if (player == computer) {
+int determineWinner(Tah player, Tah computer)
+{
+    if (player == computer)
+    {
         return 0;
-    } else if ((player == Kamen && computer == Nuzky) ||
+    }
+    else if ((player == Kamen && computer == Nuzky) ||
                (player == Nuzky && computer == Papir) ||
-               (player == Papir && computer == Kamen)) {
+               (player == Papir && computer == Kamen))
+    {
         return 1;
-    } else {
+    }
+    else
+    {
         return -1;
     }
 }
@@ -32,7 +39,8 @@ void printChoice(Tah choice) {
     }
 }
 
-int main() {
+int main()
+{
     srand(time(NULL));
 
     int playerScore = 0, computerScore = 0;
@@ -40,11 +48,13 @@ int main() {
     printf("Vitejte ve hre kamen – nuzky – papir\n");
     printf("Hrajeme na dve vitezna kola\n");
 
-    while (playerScore < 2 && computerScore < 2) {
+    while (playerScore < 2 && computerScore < 2)
+    {
         int playerInput;
 
         printf("Zadejte svuj tah (1 - Kamen, 2 - Nuzky, 3 - Papir): ");
-        if (scanf("%d", &playerInput) != 1 || playerInput < 1 || playerInput > 3) {
+        if (scanf("%d", &playerInput) != 1 || playerInput < 1 || playerInput > 3)
+        {
             printf("Tento tah je neplatny\n");
             while(getchar() != '\n');
             continue;
@@ -60,22 +70,28 @@ int main() {
         printf("\n");
 
         int result = determineWinner(playerChoice, computerChoice);
-        if (result == 0) {
+        if (result == 0)
+        {
             printf("Toto kolo je nerozhodne\n");
-        } else if (result == 1) {
+        }
+        else if (result == 1)
+        {
             printf("Toto kolo vyhral hrac\n");
             playerScore++;
-        } else {
+        } else
+        {
             printf("Toto kolo vyhral pocitac\n");
             computerScore++;
         }
-
         printf("Celkove skore: hrac %d – pocitac %d\n", playerScore, computerScore);
     }
 
-    if (playerScore == 2) {
+    if (playerScore == 2)
+    {
         printf("Celou hru vyhral hrac\n");
-    } else {
+    }
+    else
+    {
         printf("Celou hru vyhral pocitac\n");
     }
 

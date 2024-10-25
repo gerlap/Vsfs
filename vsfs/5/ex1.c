@@ -11,9 +11,7 @@ bool JeSestupne(int pole[], int size)
 	while (i < size - 1)
 	{
 		if (pole[i] < pole[i + 1])
-		{
 			return (false);
-		}
 	i++;
 	}
 	return (true);

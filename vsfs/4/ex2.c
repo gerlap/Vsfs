@@ -10,7 +10,6 @@ int	*AbsolutniHodnotaPole(int *pole, size_t size)
 	{
 		if (pole[i] < 0)
 			pole[i] = -pole[i];
-		//printf("%d ,", pole[i]);
 		i++;
 	}
 	return(pole);

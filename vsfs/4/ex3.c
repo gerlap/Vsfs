@@ -24,19 +24,19 @@ int	*ZaokrouhliPole(double *pole, size_t size)
 	}
 	return(intpole);
 }
-int	main()
-{
-	double pole[4] = { 5.12, -3.5996, 156, 7.9 };
-	int*	zaokrouhli = ZaokrouhliPole(pole, 4);
-	int i = 0;
-	if (zaokrouhli != NULL) {
-		while (i < 4)
-		{
-			printf("%d ", zaokrouhli[i]); // Output: 5 -4 156 8
-			i++;
-		}
-		printf("\n");
-		free(zaokrouhli); // Free allocated memory
-	}
-	return 0;
-}
+// int	main()
+// {
+// 	double pole[4] = { 5.12, -3.5996, 156, 7.9 };
+// 	int*	zaokrouhli = ZaokrouhliPole(pole, 4);
+// 	int i = 0;
+// 	if (zaokrouhli != NULL) {
+// 		while (i < 4)
+// 		{
+// 			printf("%d ", zaokrouhli[i]);
+// 			i++;
+// 		}
+// 		printf("\n");
+// 		free(zaokrouhli);
+// 	}
+// 	return 0;
+// }

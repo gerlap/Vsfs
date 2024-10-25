@@ -8,10 +8,11 @@ typedef enum {
     Nadvaha,
     ObezitaPrvnihoStupne,
     ObezitaDruhehoStupne,
-    ObezitaTretihoStupne    
+    ObezitaTretihoStupne
 } BMICategory;
 
-BMICategory SpoctiBMI2(double vyska, double vaha) {
+BMICategory SpoctiBMI2(double vyska, double vaha)
+{
     double bmi = vaha / (vyska * vyska);
 
     if (bmi < 16.5) return TezkaPodvyziva;

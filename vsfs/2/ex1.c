@@ -12,7 +12,9 @@ int main() {
 	if (prvni_cislo > druhe_cislo)
 	{
 		printf("Setridena cisla jsou %d, %d\n", prvni_cislo, druhe_cislo);
-	} else {
+	}
+	else
+	{
 		printf("Setridena cisla jsou %d, %d\n", druhe_cislo, prvni_cislo);
 	}
 	return 0;

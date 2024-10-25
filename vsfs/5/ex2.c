@@ -6,11 +6,7 @@ int	porovnani = 0;
 
 void	Prirazeni(int *a, int b)
 {
-	int	tmp;
-
-	tmp = *a;
 	*a = b;
-	b = tmp;
 	prirazeni++;
 }
 

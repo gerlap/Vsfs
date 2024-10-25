@@ -1,33 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	NejcastejsiPrvek(int* pole, size_t size)
+int NejcastejsiPrvek(int* pole, size_t size)
+{
+	int	most_frequent = pole[0];
+	int	max_count = 0;
+	int	max_value = pole[0];
+	int i = 0;
+
+	while (i < size)
 	{
-	int*	pocitadlo = (int*)calloc(100, sizeof(int)); // Alokace paměti pro počítadlo
-	if (pocitadlo == NULL) {
-		return -1; // Chyba při alokaci paměti
+		if (pole[i] > max_value)
+			max_value = pole[i];
+		i++;
 	}
+	//printf("%d\n", max_value); to make inner array with possible values
+	int* counts = (int*)calloc(max_value + 1, sizeof(int));
+	if (!counts)
+		return (-1);
+	i = 0;
+	while (i < size)
+	{
 
-	int	nejcastejsi = pole[0];
-	int	maxPocet = 0;
-
-	for (int i = 0; i < velikost; i++) {
-			pocitadlo[pole[i]]++; // Zvyšujeme počitadlo pro daný prvek
-		if (pocitadlo[pole[i]] > maxPocet)
+		counts[pole[i]]++;
+		printf(" %dp", counts[pole[i]]);
+		if (counts[pole[i]] > max_count)
 		{
-			maxPocet = pocitadlo[pole[i]];
-			nejcastejsi = pole[i];
+			max_count = counts[pole[i]];
+			most_frequent = pole[i];
+		}
+	i++;
 	}
-	}
-	free(pocitadlo); // Uvolnění paměti
-	return nejcastejsi;
+	free(counts);
+	return (most_frequent);
 }
 
-int main() {
-    int pole[] = { 2, 7, 6, 6, 6, 1, 7, 7, 2 };
-    int velikost = sizeof(pole) / sizeof(pole[0]);
-    int modus = NejcastejsiPrvek(pole, velikost);
-
-    printf("Nejčastější prvek: %d\n", modus); // Výstup: 7
-    return 0;
+int main()
+{
+	int pole[] = { 2, 7, 6, 6, 1, 7, 12, 2, 7 };
+	int size = sizeof(pole) / sizeof(pole[0]);
+	int mode = NejcastejsiPrvek(pole, size);
+	printf("Nejčastější prvek: %d\n", mode);
+	return 0;
 }
+
